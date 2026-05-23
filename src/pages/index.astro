@@ -1,10 +1,8 @@
 ---
 import BaseLayout from "@layouts/BaseLayout.astro";
-import { servicesData } from "@data/services";
 import { testimonialsData } from "@data/testimonials";
 import { companyInfo } from "@data/company";
 import { getLocalBusinessSchema } from "@utils/schema";
-import ServiceCard from "@components/ui/ServiceCard.astro";
 import BlogCard from "@components/ui/BlogCard.astro";
 import SectionTitle from "@components/ui/SectionTitle.astro";
 
@@ -67,7 +65,7 @@ const localBusinessSchema = getLocalBusinessSchema();
             <div class="relative bg-white border border-brand-border rounded-lg overflow-hidden surface-shadow">
               <div class="relative h-64 sm:h-80 lg:h-[28rem] bg-brand-bg-light overflow-hidden">
                 <img
-                  src="https://caixadaagua.com.br/wp-content/uploads/2024/06/Reforma-de-caixa-da-agua.jpg"
+                  src="/images/blog/1200x675/Consertar-Caixa-Fibra.webp"
                   alt="Equipe realizando reforma e manutenção de caixa d'água"
                   class="w-full h-full object-cover"
                   loading="eager"
@@ -154,18 +152,76 @@ const localBusinessSchema = getLocalBusinessSchema();
     </div>
   </section>
 
-  <!-- Services Showcase Grid -->
+  <!-- Latest SEO Guides -->
   <section class="py-20 sm:py-28 bg-white">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <SectionTitle
-        subtitle="O que fazemos de melhor"
-        title="Nossos Serviços Especializados"
-      />
-      
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-12 sm:mt-16">
-        {servicesData.map((service) => (
-          <ServiceCard service={service} />
-        ))}
+      <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-6 mb-12 sm:mb-16">
+        <SectionTitle
+          subtitle="Dicas de quem entende"
+          title="Guias e Conteúdos Recentes"
+          align="left"
+          className="m-0"
+        />
+        <a
+          href="/servicos/"
+          class="inline-flex items-center gap-1.5 text-sm font-bold text-primary hover:text-primary-hover transition-colors shrink-0"
+        >
+          Ver Serviços
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor" class="w-4 h-4">
+            <path stroke-linecap="round" stroke-linejoin="round" d="m13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" />
+          </svg>
+        </a>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <BlogCard
+          title="Como Consertar Caixa d'Água de Fibra Rachada"
+          description="Entenda quando vale a pena reparar uma caixa de fibra rachada, como funciona o reforço com resina e quais sinais indicam vazamento."
+          slug="consertar-caixa-d-agua-de-fibra"
+          category="Reparos"
+          image="/images/blog/1200x675/Consertar-Caixa-Fibra.webp"
+          mobileImage="/images/blog/768x432/Consertar-Caixa-Fibra-M.webp"
+        />
+        <BlogCard
+          title="Frequência Ideal para Limpeza de Reservatórios"
+          description="Entenda por que a ANVISA recomenda a higienização completa das caixas d'água a cada 6 meses e os riscos à saúde de negligenciar essa manutenção."
+          slug="limpeza-de-caixa-dagua"
+          category="Limpeza"
+          image="/images/blog/1200x675/Limpeza-de-Caixa-dagua.webp"
+          mobileImage="/images/blog/768x432/Limpeza-de-Caixa-dagua-M.webp"
+        />
+        <BlogCard
+          title="Infiltrações em Reservatórios de Concreto: O que Fazer?"
+          description="Guia prático para identificar trincas estruturais em cisternas de condomínios e como a impermeabilização polimérica resolve vazamentos recorrentes."
+          slug="reforma-de-caixa-dagua-de-concreto"
+          category="Impermeabilização"
+          image="/images/blog/1200x675/Reforma-de-Caixa-dagua-de-Concreto.webp"
+          mobileImage="/images/blog/768x432/Reforma-de-Caixa-dagua-de-Concreto-M.webp"
+        />
+        <BlogCard
+          title="Quando Fazer Manutenção Preventiva na Caixa d'Água"
+          description="Boias, flanges, tampas e registros precisam de inspeção periódica para evitar transbordamentos, desperdício e contaminação."
+          slug="manutencao-de-caixa-d-agua"
+          category="Manutenção"
+          image="/images/blog/1200x675/Manutencao-de-Caixa-dagua.webp"
+          mobileImage="/images/blog/768x432/Manutencao-de-Caixa-dagua-M.webp"
+        />
+        <BlogCard
+          title="Reforma de Caixa d'Água: Sinais de Alerta"
+          description="Veja os sintomas mais comuns de desgaste no reservatório e por que rachaduras e manchas de umidade não devem ser ignoradas."
+          slug="reforma-de-caixa-dagua"
+          category="Reforma"
+          image="/images/blog/1200x675/Reforma-de-Caixas-dagua.webp"
+          mobileImage="/images/blog/768x432/Reforma-de-Caixas-dagua-M.webp"
+        />
+        <BlogCard
+          title="Impermeabilização de Caixa d'Água em Condomínios"
+          description="Saiba como a impermeabilização correta protege a estrutura, evita infiltrações e ajuda síndicos a reduzirem custos emergenciais."
+          slug="impermeabilizacao-de-caixa-dagua"
+          category="Condomínios"
+          image="/images/blog/1200x675/Impermeabilizacao-de-Caixa-dagua.webp"
+          mobileImage="/images/blog/768x432/Impermeabilizacao-de-Caixa-dagua-M.webp"
+        />
       </div>
     </div>
   </section>
@@ -284,68 +340,6 @@ const localBusinessSchema = getLocalBusinessSchema();
             </div>
           </div>
         ))}
-      </div>
-    </div>
-  </section>
-
-  <!-- Latest SEO Guides -->
-  <section class="py-20 sm:py-28 bg-brand-bg-light border-y border-brand-border/60">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-6 mb-12 sm:mb-16">
-        <SectionTitle
-          subtitle="Dicas de quem entende"
-          title="Guias e Conteúdos Recentes"
-          align="left"
-          className="m-0"
-        />
-        <a
-          href="/servicos/"
-          class="inline-flex items-center gap-1.5 text-sm font-bold text-primary hover:text-primary-hover transition-colors shrink-0"
-        >
-          Ver Serviços
-          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor" class="w-4 h-4">
-            <path stroke-linecap="round" stroke-linejoin="round" d="m13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" />
-          </svg>
-        </a>
-      </div>
-
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-        <BlogCard
-          title="Como Consertar Caixa d'Água de Fibra Rachada"
-          description="Entenda quando vale a pena reparar uma caixa de fibra rachada, como funciona o reforço com resina e quais sinais indicam vazamento."
-          slug="consertar-caixa-d-agua-de-fibra"
-          category="Reparos"
-        />
-        <BlogCard
-          title="Frequência Ideal para Limpeza de Reservatórios"
-          description="Entenda por que a ANVISA recomenda a higienização completa das caixas d'água a cada 6 meses e os riscos à saúde de negligenciar essa manutenção."
-          slug="limpeza-de-caixa-dagua"
-          category="Limpeza"
-        />
-        <BlogCard
-          title="Infiltrações em Reservatórios de Concreto: O que Fazer?"
-          description="Guia prático para identificar trincas estruturais em cisternas de condomínios e como a impermeabilização polimérica resolve vazamentos recorrentes."
-          slug="reforma-de-caixa-dagua-de-concreto"
-          category="Impermeabilização"
-        />
-        <BlogCard
-          title="Quando Fazer Manutenção Preventiva na Caixa d'Água"
-          description="Boias, flanges, tampas e registros precisam de inspeção periódica para evitar transbordamentos, desperdício e contaminação."
-          slug="manutencao-de-caixa-d-agua"
-          category="Manutenção"
-        />
-        <BlogCard
-          title="Reforma de Caixa d'Água: Sinais de Alerta"
-          description="Veja os sintomas mais comuns de desgaste no reservatório e por que rachaduras e manchas de umidade não devem ser ignoradas."
-          slug="reforma-de-caixa-dagua"
-          category="Reforma"
-        />
-        <BlogCard
-          title="Impermeabilização de Caixa d'Água em Condomínios"
-          description="Saiba como a impermeabilização correta protege a estrutura, evita infiltrações e ajuda síndicos a reduzirem custos emergenciais."
-          slug="impermeabilizacao-de-caixa-dagua"
-          category="Condomínios"
-        />
       </div>
     </div>
   </section>
