@@ -8,13 +8,13 @@ interface Props {
 const { service } = Astro.props;
 ---
 
-<div class="group bg-white border border-brand-border/60 rounded-3xl p-6 sm:p-8 shadow-sm hover:shadow-lg hover:border-primary/20 hover:-translate-y-1.5 transition-all duration-300 flex flex-col justify-between h-full relative overflow-hidden">
+<div class="group bg-white border border-brand-border/70 rounded-lg p-6 shadow-sm hover:surface-shadow hover:border-primary/25 hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between h-full relative overflow-hidden">
   <!-- Accent top line on hover -->
   <div class="absolute top-0 left-0 right-0 h-1.5 bg-gradient-to-r from-primary to-primary-hover transform -translate-y-full group-hover:translate-y-0 transition-transform duration-300"></div>
 
   <div class="space-y-4">
     <!-- Icon Container -->
-    <div class="w-12 h-12 rounded-2xl bg-primary/10 text-primary flex items-center justify-center group-hover:bg-primary group-hover:text-white transition-colors duration-300">
+    <div class="w-12 h-12 rounded-lg bg-primary/10 text-primary flex items-center justify-center group-hover:bg-primary group-hover:text-white transition-colors duration-300">
       {service.iconName === "tools" && (
         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-6 h-6">
           <path stroke-linecap="round" stroke-linejoin="round" d="M11.42 15.17 17.25 21A1.75 1.75 0 1 0 19.75 18.5l-5.83-5.83M11.42 15.17a3 3 0 1 1-4.24-4.24 3 3 0 0 1 4.24 4.24Z" />
@@ -51,7 +51,7 @@ const { service } = Astro.props;
 
     <!-- Title & Description -->
     <div class="space-y-2">
-      <h3 class="text-xl font-bold text-brand-dark group-hover:text-primary transition-colors duration-300">
+      <h3 class="text-lg font-bold text-brand-dark group-hover:text-primary transition-colors duration-300 leading-snug">
         {service.title}
       </h3>
       <p class="text-sm text-brand-gray leading-relaxed">
@@ -63,7 +63,7 @@ const { service } = Astro.props;
   <!-- Read more action link -->
   <div class="pt-6 mt-6 border-t border-brand-border/40 flex items-center justify-between text-xs font-bold text-brand-dark group-hover:text-primary transition-colors duration-300">
     <span>Ver Detalhes do Serviço</span>
-    <a href={`/${service.slug}/`} class="inline-flex items-center justify-center w-8 h-8 rounded-full bg-brand-bg-light group-hover:bg-primary group-hover:text-white transition-colors duration-300" aria-label={`Ver detalhes de ${service.title}`}>
+    <a href={`/${service.slug}/`} class="inline-flex items-center justify-center w-8 h-8 rounded-lg bg-brand-bg-light group-hover:bg-primary group-hover:text-white transition-colors duration-300 focus-ring" aria-label={`Ver detalhes de ${service.title}`}>
       <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor" class="w-4 h-4">
         <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" />
       </svg>

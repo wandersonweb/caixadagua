@@ -13,82 +13,97 @@ const localBusinessSchema = getLocalBusinessSchema();
 
 <BaseLayout isHome={true} schema={localBusinessSchema}>
   <!-- Hero Section -->
-  <section class="relative bg-gradient-to-br from-brand-dark to-[#100e16] text-white py-20 sm:py-32 overflow-hidden">
-    <div class="absolute inset-0 opacity-10 bg-[radial-gradient(#2351ff_1px,transparent_1px)] [background-size:16px_16px]"></div>
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+  <section class="relative bg-[#eef6fb] text-brand-dark overflow-hidden">
+    <div class="absolute inset-x-0 top-0 h-40 bg-white"></div>
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-center min-h-[calc(100vh-5rem)] py-12 sm:py-16">
         
-        <div class="lg:col-span-7 space-y-6 text-center lg:text-left">
-          <span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-bold bg-primary/10 text-primary border border-primary/20 uppercase tracking-widest">
-            Profissionais NR33 & NR35
+        <div class="lg:col-span-6 space-y-7 text-center lg:text-left">
+          <span class="inline-flex items-center px-3 py-1 rounded-md text-xs font-bold bg-white text-primary border border-brand-border uppercase tracking-widest shadow-sm">
+            Profissionais NR33 e NR35 na Grande BH
           </span>
-          <h1 class="text-4xl sm:text-6xl font-extrabold tracking-tight text-white leading-tight">
-            Especialistas em Reforma e Manutenção de <span class="text-gradient">Caixa D'Água</span>
+          <h1 class="text-4xl sm:text-6xl font-extrabold tracking-tight text-brand-dark leading-tight">
+            Reforma e manutenção de <span class="text-gradient">caixa d'água</span> com segurança técnica
           </h1>
           <p class="text-lg text-brand-gray leading-relaxed max-w-2xl mx-auto lg:mx-0">
-            Problemas com vazamentos na sua caixa d’água de fibra? Não espere mais! Clique agora e fale conosco pelo WhatsApp para uma reforma rápida e segura. Garanta água limpa e reservatório em perfeito estado!
+            Atendimento para residências, condomínios e empresas em Belo Horizonte: conserto de vazamentos, impermeabilização, limpeza e recuperação estrutural de reservatórios.
           </p>
           <div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 pt-2">
             <a
               href={companyInfo.whatsappUrl}
               target="_blank"
               rel="noopener noreferrer"
-              class="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 h-14 text-sm font-bold text-white bg-whatsapp hover:bg-whatsapp-hover rounded-xl shadow-xl shadow-whatsapp/15 transform hover:-translate-y-0.5 transition-all"
+              class="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 h-14 text-sm font-bold text-white bg-whatsapp hover:bg-whatsapp-hover rounded-lg shadow-xl shadow-whatsapp/15 transform hover:-translate-y-0.5 transition-all focus-ring"
             >
-              Falar no WhatsApp
+              Solicitar orçamento agora
             </a>
             <a
               href="/servicos/"
-              class="w-full sm:w-auto inline-flex items-center justify-center px-8 h-14 text-sm font-bold text-white bg-white/10 hover:bg-white/20 border border-white/10 rounded-xl transition-all"
+              class="w-full sm:w-auto inline-flex items-center justify-center px-8 h-14 text-sm font-bold text-brand-dark bg-white hover:bg-brand-bg-light border border-brand-border rounded-lg transition-all focus-ring"
             >
-              Conhecer Nossos Serviços
+              Ver serviços
             </a>
+          </div>
+          <div class="grid grid-cols-3 gap-3 pt-4 max-w-xl mx-auto lg:mx-0 text-left">
+            <div class="bg-white border border-brand-border rounded-lg p-4 shadow-sm">
+              <span class="block text-2xl font-extrabold text-brand-dark">BH</span>
+              <span class="text-xs font-semibold text-brand-gray leading-tight">e região metropolitana</span>
+            </div>
+            <div class="bg-white border border-brand-border rounded-lg p-4 shadow-sm">
+              <span class="block text-2xl font-extrabold text-brand-dark">NR33</span>
+              <span class="text-xs font-semibold text-brand-gray leading-tight">espaço confinado</span>
+            </div>
+            <div class="bg-white border border-brand-border rounded-lg p-4 shadow-sm">
+              <span class="block text-2xl font-extrabold text-brand-dark">NR35</span>
+              <span class="text-xs font-semibold text-brand-gray leading-tight">trabalho em altura</span>
+            </div>
           </div>
         </div>
 
-        <!-- Trust Form / Promo Card -->
-        <div class="lg:col-span-5">
-          <div class="bg-white/5 border border-white/10 rounded-3xl p-6 sm:p-8 backdrop-blur-md shadow-2xl relative overflow-hidden">
-            <div class="space-y-6 relative z-10">
-              <div class="text-center">
-                <span class="text-xs text-primary font-bold tracking-widest uppercase">Atendimento Rápido</span>
-                <h2 class="text-2xl font-bold text-white mt-1">Solicite um Orçamento</h2>
-                <p class="text-xs text-brand-gray mt-2 leading-relaxed">
-                  Realizamos reforma de caixas de fibra de vidro, concreto e cisternas com garantia total na Grande Belo Horizonte.
-                </p>
+        <!-- Trust Panel -->
+        <div class="lg:col-span-6">
+          <div class="relative">
+            <div class="absolute -inset-4 bg-primary/10 rounded-lg"></div>
+            <div class="relative bg-white border border-brand-border rounded-lg overflow-hidden surface-shadow">
+              <div class="relative h-64 sm:h-80 lg:h-[28rem] bg-brand-bg-light overflow-hidden">
+                <img
+                  src="https://caixadaagua.com.br/wp-content/uploads/2024/06/Reforma-de-caixa-da-agua.jpg"
+                  alt="Equipe realizando reforma e manutenção de caixa d'água"
+                  class="w-full h-full object-cover"
+                  loading="eager"
+                />
+                <div class="absolute inset-0 bg-gradient-to-t from-brand-dark/80 via-brand-dark/15 to-transparent"></div>
+                <div class="absolute left-5 right-5 bottom-5">
+                  <div class="bg-white/95 border border-white rounded-lg p-4 shadow-lg">
+                    <span class="text-xs text-primary font-bold tracking-widest uppercase">Vistoria e execução</span>
+                    <h2 class="text-xl font-bold text-brand-dark mt-1">Reservatório sem vazamento, infiltração ou risco de contaminação</h2>
+                  </div>
+                </div>
               </div>
-              <div class="space-y-4">
-                <div class="flex items-center gap-3 p-4 rounded-xl bg-white/5 border border-white/5">
-                  <div class="w-8 h-8 rounded-lg bg-whatsapp/10 text-whatsapp flex items-center justify-center shrink-0">
+              <div class="grid grid-cols-1 sm:grid-cols-2 divide-y sm:divide-y-0 sm:divide-x divide-brand-border">
+                <div class="flex items-center gap-3 p-5">
+                  <div class="w-9 h-9 rounded-lg bg-whatsapp/10 text-whatsapp flex items-center justify-center shrink-0">
                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-5 h-5">
                       <path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75 11.25 15 15 9.75m-3-7.036A11.959 11.959 0 0 1 3.598 6 11.99 11.99 0 0 0 3 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285Z" />
                     </svg>
                   </div>
                   <div>
-                    <h3 class="text-sm font-bold text-white leading-tight">Segurança Certificada</h3>
-                    <p class="text-[11px] text-brand-gray">Profissionais treinados em NR33 e NR35.</p>
+                    <h3 class="text-sm font-bold text-brand-dark leading-tight">Segurança certificada</h3>
+                    <p class="text-xs text-brand-gray">Equipe treinada para acesso, altura e espaço confinado.</p>
                   </div>
                 </div>
-                <div class="flex items-center gap-3 p-4 rounded-xl bg-white/5 border border-white/5">
-                  <div class="w-8 h-8 rounded-lg bg-primary/10 text-primary flex items-center justify-center shrink-0">
+                <div class="flex items-center gap-3 p-5">
+                  <div class="w-9 h-9 rounded-lg bg-primary/10 text-primary flex items-center justify-center shrink-0">
                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-5 h-5">
                       <path stroke-linecap="round" stroke-linejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
                     </svg>
                   </div>
                   <div>
-                    <h3 class="text-sm font-bold text-white leading-tight">Atendimento Imediato</h3>
-                    <p class="text-[11px] text-brand-gray">Orçamento gratuito sem compromisso via WhatsApp.</p>
+                    <h3 class="text-sm font-bold text-brand-dark leading-tight">Resposta rápida</h3>
+                    <p class="text-xs text-brand-gray">Orçamento sem compromisso pelo WhatsApp.</p>
                   </div>
                 </div>
               </div>
-              <a
-                href={companyInfo.whatsappUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                class="flex items-center justify-center gap-2 w-full py-4 text-sm font-bold text-white bg-whatsapp hover:bg-whatsapp-hover rounded-xl shadow-lg transition-all transform hover:-translate-y-0.5"
-              >
-                Chame no WhatsApp Agora
-              </a>
             </div>
           </div>
         </div>
@@ -98,11 +113,11 @@ const localBusinessSchema = getLocalBusinessSchema();
   </section>
 
   <!-- Statistics / Trust Badges Grid -->
-  <section class="py-12 bg-brand-bg-light border-y border-brand-border/60">
+  <section class="py-12 bg-white border-y border-brand-border/60">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="grid grid-cols-1 sm:grid-cols-3 gap-8 text-center sm:text-left">
         <div class="flex flex-col sm:flex-row items-center gap-4">
-          <div class="w-12 h-12 rounded-2xl bg-white border border-brand-border flex items-center justify-center text-primary shadow-sm shrink-0">
+          <div class="w-12 h-12 rounded-lg bg-brand-bg-light border border-brand-border flex items-center justify-center text-primary shadow-sm shrink-0">
             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-6 h-6">
               <path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75 11.25 15 15 9.75M21 12c0 1.268-.63 2.39-1.593 3.068a3.745 3.745 0 0 1-1.043 3.296 3.745 3.745 0 0 1-3.296 1.043A3.745 3.745 0 0 1 12 21c-1.268 0-2.39-.63-3.068-1.593a3.746 3.746 0 0 1-3.296-1.043 3.745 3.745 0 0 1-1.043-3.296A3.745 3.745 0 0 1 3 12c0-1.268.63-2.39 1.593-3.068a3.746 3.746 0 0 1 1.043-3.296 3.746 3.746 0 0 1 3.296-1.043A3.746 3.746 0 0 1 12 3c1.268 0 2.39.63 3.068 1.593a3.746 3.746 0 0 1 3.296 1.043 3.746 3.746 0 0 1 1.043 3.296A3.745 3.745 0 0 1 21 12Z" />
             </svg>
@@ -113,7 +128,7 @@ const localBusinessSchema = getLocalBusinessSchema();
           </div>
         </div>
         <div class="flex flex-col sm:flex-row items-center gap-4">
-          <div class="w-12 h-12 rounded-2xl bg-white border border-brand-border flex items-center justify-center text-primary shadow-sm shrink-0">
+          <div class="w-12 h-12 rounded-lg bg-brand-bg-light border border-brand-border flex items-center justify-center text-primary shadow-sm shrink-0">
             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-6 h-6">
               <path stroke-linecap="round" stroke-linejoin="round" d="M11.42 15.17 17.25 21A1.75 1.75 0 1 0 19.75 18.5l-5.83-5.83M11.42 15.17a3 3 0 1 1-4.24-4.24 3 3 0 0 1 4.24 4.24Z" />
               <path stroke-linecap="round" stroke-linejoin="round" d="M18.41 8.586a3.75 3.75 0 1 1-5.3 5.3c-.347-.346-.71-.628-1.077-.852l-.462-.283a2.625 2.625 0 0 0-3.712 0l-.18.18a2.625 2.625 0 0 0 0 3.712l.18.18a2.625 2.625 0 0 0 3.712 0l.18-.18" />
@@ -125,7 +140,7 @@ const localBusinessSchema = getLocalBusinessSchema();
           </div>
         </div>
         <div class="flex flex-col sm:flex-row items-center gap-4">
-          <div class="w-12 h-12 rounded-2xl bg-white border border-brand-border flex items-center justify-center text-primary shadow-sm shrink-0">
+          <div class="w-12 h-12 rounded-lg bg-brand-bg-light border border-brand-border flex items-center justify-center text-primary shadow-sm shrink-0">
             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-6 h-6">
               <path stroke-linecap="round" stroke-linejoin="round" d="M10.125 2.25h3.75a.75.75 0 0 1 .75.75v1.125c0 .414.336.75.75.75h4.125c.414 0 .75.336.75.75v14.25a.75.75 0 0 1-.75.75h-15.75a.75.75 0 0 1-.75-.75V5.625c0-.414.336-.75.75-.75H7.5A.75.75 0 0 1 8.25 4.125V3a.75.75 0 0 1 .75-.75Zm1.5 6.75a.75.75 0 0 0 0 1.5h1.5a.75.75 0 0 0 0-1.5h-1.5Zm0 3.75a.75.75 0 0 0 0 1.5h1.5a.75.75 0 0 0 0-1.5h-1.5Zm0 3.75a.75.75 0 0 0 0 1.5h1.5a.75.75 0 0 0 0-1.5h-1.5ZM8.25 9.75a.75.75 0 1 0-1.5 0 .75.75 0 0 0 1.5 0Zm0 3.75a.75.75 0 1 0-1.5 0 .75.75 0 0 0 1.5 0Zm0 3.75a.75.75 0 1 0-1.5 0 .75.75 0 0 0 1.5 0Z" />
             </svg>
@@ -205,7 +220,7 @@ const localBusinessSchema = getLocalBusinessSchema();
           <div class="pt-4">
             <a
               href="/sobre-nos/"
-              class="inline-flex items-center justify-center px-6 h-12 text-sm font-bold text-white bg-primary hover:bg-primary-hover rounded-xl shadow-md transition-all"
+              class="inline-flex items-center justify-center px-6 h-12 text-sm font-bold text-white bg-primary hover:bg-primary-hover rounded-lg shadow-md transition-all focus-ring"
             >
               Conheça Nossa História
             </a>
@@ -214,14 +229,13 @@ const localBusinessSchema = getLocalBusinessSchema();
 
         <div class="relative">
           <!-- Visual Decoration representing a clean pool/water -->
-          <div class="absolute inset-0 bg-gradient-to-tr from-primary/10 to-primary/20 rounded-3xl blur-3xl transform rotate-3 scale-95 opacity-80"></div>
-          <div class="relative bg-white border border-brand-border/60 rounded-3xl p-6 sm:p-10 shadow-lg space-y-6">
+          <div class="relative bg-white border border-brand-border/70 rounded-lg p-6 sm:p-10 surface-shadow space-y-6">
             <span class="text-xs font-bold text-primary tracking-widest uppercase">Excelência e Confiabilidade</span>
             <blockquote class="text-lg font-medium text-brand-dark italic leading-relaxed">
               "Todos os Direitos Reservados - Reforma e Manutenção de caixas d'água. Oferecemos segurança estrutural e higiene garantida para seu sistema de água potável em condomínios e edifícios em BH."
             </blockquote>
             <div class="flex items-center gap-3">
-              <div class="w-10 h-10 rounded-full bg-primary/10 text-primary flex items-center justify-center font-bold text-sm">
+              <div class="w-10 h-10 rounded-lg bg-primary/10 text-primary flex items-center justify-center font-bold text-sm">
                 CS
               </div>
               <div>
@@ -245,7 +259,7 @@ const localBusinessSchema = getLocalBusinessSchema();
 
       <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mt-12 sm:mt-16">
         {testimonialsData.map((t) => (
-          <div class="bg-brand-bg-light border border-brand-border/40 rounded-3xl p-6 sm:p-8 flex flex-col justify-between hover:shadow-md transition-all duration-300">
+          <div class="bg-brand-bg-light border border-brand-border/60 rounded-lg p-6 sm:p-8 flex flex-col justify-between hover:surface-shadow transition-all duration-300">
             <div class="space-y-4">
               <!-- Rating Stars -->
               <div class="flex items-center gap-1 text-amber-500">
@@ -260,7 +274,7 @@ const localBusinessSchema = getLocalBusinessSchema();
               </p>
             </div>
             <div class="flex items-center gap-3 pt-6 mt-6 border-t border-brand-border/30">
-              <div class="w-10 h-10 rounded-full bg-primary/10 text-primary flex items-center justify-center font-bold text-xs">
+              <div class="w-10 h-10 rounded-lg bg-primary/10 text-primary flex items-center justify-center font-bold text-xs">
                 {t.name.split(" ").map(n => n[0]).join("")}
               </div>
               <div>
@@ -351,13 +365,13 @@ const localBusinessSchema = getLocalBusinessSchema();
           href={companyInfo.whatsappUrl}
           target="_blank"
           rel="noopener noreferrer"
-          class="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 h-14 text-sm font-bold text-white bg-whatsapp hover:bg-whatsapp-hover rounded-xl shadow-xl transition-all"
+          class="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 h-14 text-sm font-bold text-white bg-whatsapp hover:bg-whatsapp-hover rounded-lg shadow-xl transition-all focus-ring"
         >
           Falar com Especialista pelo WhatsApp
         </a>
         <a
           href="/contato/"
-          class="w-full sm:w-auto inline-flex items-center justify-center px-8 h-14 text-sm font-bold text-brand-dark bg-brand-bg-light hover:bg-brand-border rounded-xl transition-all"
+          class="w-full sm:w-auto inline-flex items-center justify-center px-8 h-14 text-sm font-bold text-brand-dark bg-brand-bg-light hover:bg-brand-border rounded-lg transition-all focus-ring"
         >
           Enviar Mensagem
         </a>
