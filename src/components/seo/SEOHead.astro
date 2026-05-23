@@ -1,0 +1,48 @@
+---
+import { SEO } from "astro-seo";
+import { defaultSEO, getPageTitle } from "@utils/seo";
+
+interface Props {
+  title?: string;
+  description?: string;
+  canonical?: string;
+  ogImage?: string;
+  isHome?: boolean;
+  schema?: Record<string, any> | Record<string, any>[];
+}
+
+const { title, description, canonical, ogImage, isHome = false, schema } = Astro.props;
+
+const finalTitle = getPageTitle(title || defaultSEO.title, isHome);
+const finalDescription = description || defaultSEO.description;
+const finalCanonical = canonical || Astro.url.href;
+const finalOgImage = ogImage || defaultSEO.openGraph.basic.image;
+---
+
+<SEO
+  title={finalTitle}
+  description={finalDescription}
+  canonical={finalCanonical}
+  openGraph={{
+    basic: {
+      title: finalTitle,
+      type: "website",
+      image: finalOgImage,
+      url: finalCanonical,
+    },
+    optional: {
+      locale: "pt_BR",
+      siteName: defaultSEO.openGraph.optional.siteName,
+    }
+  }}
+  twitter={{
+    card: "summary_large_image",
+    title: finalTitle,
+    description: finalDescription,
+    image: finalOgImage,
+  }}
+/>
+
+{schema && (
+  <script type="application/ld+json" set:html={JSON.stringify(schema)} />
+)}

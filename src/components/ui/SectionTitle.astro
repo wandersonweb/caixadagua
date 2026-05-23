@@ -1,0 +1,22 @@
+---
+interface Props {
+  title: string;
+  subtitle?: string;
+  align?: "left" | "center";
+  className?: string;
+}
+
+const { title, subtitle, align = "center", className = "" } = Astro.props;
+---
+
+<div class={`space-y-3 ${align === 'center' ? 'text-center max-w-2xl mx-auto' : 'text-left'} ${className}`}>
+  {subtitle && (
+    <span class="text-xs font-extrabold tracking-widest text-primary uppercase block">
+      {subtitle}
+    </span>
+  )}
+  <h2 class="text-3xl sm:text-4xl font-extrabold tracking-tight text-brand-dark leading-tight">
+    {title}
+  </h2>
+  <div class={`h-1 w-16 bg-gradient-to-r from-primary to-primary-hover rounded-full ${align === 'center' ? 'mx-auto' : ''}`}></div>
+</div>

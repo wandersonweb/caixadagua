@@ -1,0 +1,50 @@
+---
+interface Props {
+  href?: string;
+  variant?: "primary" | "secondary" | "outline" | "whatsapp";
+  size?: "sm" | "md" | "lg";
+  className?: string;
+  target?: string;
+  rel?: string;
+  [key: string]: any;
+}
+
+const {
+  href,
+  variant = "primary",
+  size = "md",
+  className = "",
+  target,
+  rel,
+  ...rest
+} = Astro.props;
+
+const baseStyles = "inline-flex items-center justify-center font-bold rounded-xl transition-all duration-200 transform active:scale-[0.98] select-none text-center cursor-pointer";
+
+const variants = {
+  primary: "bg-primary hover:bg-primary-hover text-white shadow-md shadow-primary/10 hover:-translate-y-0.5",
+  secondary: "bg-brand-bg-light hover:bg-brand-border text-brand-dark hover:-translate-y-0.5",
+  outline: "bg-transparent border-2 border-brand-border hover:border-brand-dark text-brand-dark hover:bg-brand-bg-light",
+  whatsapp: "bg-whatsapp hover:bg-whatsapp-hover text-white shadow-md shadow-whatsapp/15 hover:-translate-y-0.5"
+};
+
+const sizes = {
+  sm: "px-4 h-9 text-xs",
+  md: "px-6 h-12 text-sm",
+  lg: "px-8 h-14 text-base"
+};
+
+const finalClasses = `${baseStyles} ${variants[variant]} ${sizes[size]} ${className}`;
+---
+
+{
+  href ? (
+    <a href={href} class={finalClasses} target={target} rel={rel} {...rest}>
+      <slot />
+    </a>
+  ) : (
+    <button class={finalClasses} {...rest}>
+      <slot />
+    </button>
+  )
+}

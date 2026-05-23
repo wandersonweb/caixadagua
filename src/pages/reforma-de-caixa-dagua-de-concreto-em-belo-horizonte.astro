@@ -1,0 +1,19 @@
+---
+import ServiceLayout from "@layouts/ServiceLayout.astro";
+import { servicesData } from "@data/services";
+
+const service = servicesData.find((item) => item.slug === "reforma-de-caixa-dagua-de-concreto-em-belo-horizonte");
+if (!service) throw new Error("Serviço não encontrado: reforma-de-caixa-dagua-de-concreto-em-belo-horizonte");
+---
+
+<ServiceLayout service={service}>
+  <p>
+    A Caixas São Bento atende Belo Horizonte e região metropolitana com reforma de caixas d'água de concreto para condomínios, empresas, comércios e residências. Essa solução complementa nosso serviço principal de <a href="/reforma-de-caixa-dagua/">reforma de caixas d'água</a> para diferentes tipos de reservatório.
+  </p>
+  <p>
+    O trabalho inclui vistoria, identificação de infiltrações, tratamento de trincas, recuperação de concreto, proteção de ferragens e <a href="/impermeabilizacao-de-caixa-dagua/">impermeabilização</a>. Quando necessário, seguimos protocolos de segurança para trabalho em altura e espaço confinado.
+  </p>
+  <p>
+    Para síndicos, administradoras e gestores prediais, oferecemos atendimento objetivo, orçamento claro e execução com foco em segurança, prazo e qualidade de entrega. Também realizamos <a href="/limpeza-de-caixa-dagua/">limpeza</a> e <a href="/manutencao-de-caixa-d-agua/">manutenção de caixa d'água</a> para preservar o reservatório depois da reforma.
+  </p>
+</ServiceLayout>

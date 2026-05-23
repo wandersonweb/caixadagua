@@ -1,0 +1,147 @@
+---
+import BaseLayout from "@layouts/BaseLayout.astro";
+import { companyInfo } from "@data/company";
+import { getBreadcrumbSchema } from "@utils/schema";
+import SectionTitle from "@components/ui/SectionTitle.astro";
+
+const breadcrumbSchema = getBreadcrumbSchema([
+  { name: "Home", url: companyInfo.siteUrl },
+  { name: "Quem Somos", url: `${companyInfo.siteUrl}/sobre-nos/` }
+]);
+---
+
+<BaseLayout
+  title="Quem Somos"
+  description="Conheça a Caixas São Bento: especialistas em reforma, manutenção, impermeabilização e limpeza de caixas d'água em Belo Horizonte e região metropolitana."
+  canonical={`${companyInfo.siteUrl}/sobre-nos/`}
+  schema={breadcrumbSchema}
+>
+  <!-- Hero -->
+  <section class="relative bg-gradient-to-br from-brand-dark to-[#100e16] text-white py-16 sm:py-24 overflow-hidden border-b border-primary/10">
+    <div class="absolute inset-0 opacity-10 bg-[radial-gradient(#2351ff_1px,transparent_1px)] [background-size:16px_16px]"></div>
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      <nav class="flex items-center gap-2 text-xs text-brand-gray mb-4 font-medium" aria-label="Breadcrumb">
+        <a href="/" class="hover:text-white transition-colors">Home</a>
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor" class="w-3 h-3 text-brand-gray/60"><path stroke-linecap="round" stroke-linejoin="round" d="m8.25 4.5 7.5 7.5-7.5 7.5" /></svg>
+        <span class="text-brand-gray/80" aria-current="page">Quem Somos</span>
+      </nav>
+      <div class="max-w-3xl">
+        <h1 class="text-3xl sm:text-5xl font-extrabold tracking-tight text-white leading-tight mb-4">
+          Quem Somos
+        </h1>
+        <p class="text-lg text-brand-gray leading-relaxed">
+          Referência em reforma e manutenção de caixas d'água na Grande Belo Horizonte, com equipe certificada e comprometida com segurança e qualidade.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- About Content -->
+  <section class="py-16 sm:py-24 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
+        <div class="space-y-8">
+          <SectionTitle subtitle="Nossa História" title="Excelência e Confiabilidade" align="left" />
+          <div class="space-y-4 text-base text-brand-dark/85 leading-relaxed">
+            <p>
+              A <strong>Caixas São Bento</strong> nasceu com o propósito de oferecer soluções especializadas e acessíveis para a manutenção de reservatórios de água em Belo Horizonte e toda a região metropolitana de Minas Gerais.
+            </p>
+            <p>
+              Com anos de experiência acumulada, nos tornamos referência no segmento ao combinar <strong>técnica apurada</strong>, <strong>materiais certificados</strong> e um atendimento humanizado que coloca as necessidades do cliente em primeiro lugar.
+            </p>
+            <p>
+              Cada serviço que realizamos — seja uma simples limpeza semestral ou uma recuperação estrutural complexa de um reservatório de concreto armado — segue rigorosos padrões de qualidade e segurança, em conformidade com as normas regulamentadoras NR33 (Espaço Confinado) e NR35 (Trabalho em Altura).
+            </p>
+          </div>
+        </div>
+
+        <div class="space-y-6">
+          <!-- Mission Card -->
+          <div class="bg-brand-bg-light border border-brand-border/60 rounded-3xl p-6 sm:p-8">
+            <div class="flex items-start gap-4">
+              <div class="w-10 h-10 rounded-xl bg-primary/10 text-primary flex items-center justify-center shrink-0">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-5 h-5"><path stroke-linecap="round" stroke-linejoin="round" d="M3.75 13.5l10.5-11.25L12 10.5h8.25L9.75 21.75 12 13.5H3.75Z" /></svg>
+              </div>
+              <div>
+                <h3 class="text-lg font-bold text-brand-dark mb-2">Nossa Missão</h3>
+                <p class="text-sm text-brand-gray leading-relaxed">Garantir água limpa e segura através da manutenção preventiva e corretiva de reservatórios, protegendo a saúde das famílias e a integridade dos imóveis.</p>
+              </div>
+            </div>
+          </div>
+          <!-- Vision Card -->
+          <div class="bg-brand-bg-light border border-brand-border/60 rounded-3xl p-6 sm:p-8">
+            <div class="flex items-start gap-4">
+              <div class="w-10 h-10 rounded-xl bg-primary/10 text-primary flex items-center justify-center shrink-0">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-5 h-5"><path stroke-linecap="round" stroke-linejoin="round" d="M2.036 12.322a1.012 1.012 0 0 1 0-.639C3.423 7.51 7.36 4.5 12 4.5c4.638 0 8.573 3.007 9.963 7.178.07.207.07.431 0 .639C20.577 16.49 16.64 19.5 12 19.5c-4.638 0-8.573-3.007-9.963-7.178Z" /><path stroke-linecap="round" stroke-linejoin="round" d="M15 12a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z" /></svg>
+              </div>
+              <div>
+                <h3 class="text-lg font-bold text-brand-dark mb-2">Nossa Visão</h3>
+                <p class="text-sm text-brand-gray leading-relaxed">Ser a empresa mais confiável e recomendada do segmento de manutenção de caixas d'água em Minas Gerais, reconhecida pela excelência técnica e atendimento humanizado.</p>
+              </div>
+            </div>
+          </div>
+          <!-- Values Card -->
+          <div class="bg-brand-bg-light border border-brand-border/60 rounded-3xl p-6 sm:p-8">
+            <div class="flex items-start gap-4">
+              <div class="w-10 h-10 rounded-xl bg-primary/10 text-primary flex items-center justify-center shrink-0">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-5 h-5"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75 11.25 15 15 9.75m-3-7.036A11.959 11.959 0 0 1 3.598 6 11.99 11.99 0 0 0 3 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285Z" /></svg>
+              </div>
+              <div>
+                <h3 class="text-lg font-bold text-brand-dark mb-2">Nossos Valores</h3>
+                <p class="text-sm text-brand-gray leading-relaxed">Segurança em primeiro lugar, transparência total, compromisso com prazos e qualidade certificada em cada etapa do processo.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Certifications -->
+  <section class="py-16 sm:py-20 bg-brand-bg-light border-y border-brand-border/60">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <SectionTitle subtitle="Segurança e Conformidade" title="Certificações da Nossa Equipe" />
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mt-12">
+        <div class="bg-white border border-brand-border/60 rounded-2xl p-6 text-center shadow-sm">
+          <div class="w-14 h-14 mx-auto rounded-2xl bg-primary/10 text-primary flex items-center justify-center mb-4">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-7 h-7"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75 11.25 15 15 9.75m-3-7.036A11.959 11.959 0 0 1 3.598 6 11.99 11.99 0 0 0 3 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285Z" /></svg>
+          </div>
+          <h3 class="text-sm font-bold text-brand-dark mb-1">NR33</h3>
+          <p class="text-xs text-brand-gray">Segurança em Espaços Confinados</p>
+        </div>
+        <div class="bg-white border border-brand-border/60 rounded-2xl p-6 text-center shadow-sm">
+          <div class="w-14 h-14 mx-auto rounded-2xl bg-primary/10 text-primary flex items-center justify-center mb-4">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-7 h-7"><path stroke-linecap="round" stroke-linejoin="round" d="M12 6v12m-3-2.818.879.659c1.171.879 3.07.879 4.242 0 1.172-.879 1.172-2.303 0-3.182C13.536 12.219 12.768 12 12 12c-.725 0-1.45-.22-2.003-.659-1.106-.879-1.106-2.303 0-3.182s2.9-.879 4.006 0l.415.33M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" /></svg>
+          </div>
+          <h3 class="text-sm font-bold text-brand-dark mb-1">NR35</h3>
+          <p class="text-xs text-brand-gray">Trabalho em Altura</p>
+        </div>
+        <div class="bg-white border border-brand-border/60 rounded-2xl p-6 text-center shadow-sm">
+          <div class="w-14 h-14 mx-auto rounded-2xl bg-primary/10 text-primary flex items-center justify-center mb-4">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-7 h-7"><path stroke-linecap="round" stroke-linejoin="round" d="M19.5 14.25v-2.625a3.375 3.375 0 0 0-3.375-3.375h-1.5A1.125 1.125 0 0 1 13.5 7.125v-1.5a3.375 3.375 0 0 0-3.375-3.375H8.25m2.25 0H5.625c-.621 0-1.125.504-1.125 1.125v17.25c0 .621.504 1.125 1.125 1.125h12.75c.621 0 1.125-.504 1.125-1.125V11.25a9 9 0 0 0-9-9Z" /></svg>
+          </div>
+          <h3 class="text-sm font-bold text-brand-dark mb-1">ANVISA</h3>
+          <p class="text-xs text-brand-gray">Produtos Certificados</p>
+        </div>
+        <div class="bg-white border border-brand-border/60 rounded-2xl p-6 text-center shadow-sm">
+          <div class="w-14 h-14 mx-auto rounded-2xl bg-primary/10 text-primary flex items-center justify-center mb-4">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-7 h-7"><path stroke-linecap="round" stroke-linejoin="round" d="M15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z" /><path stroke-linecap="round" stroke-linejoin="round" d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25s-7.5-4.108-7.5-11.25a7.5 7.5 0 1 1 15 0Z" /></svg>
+          </div>
+          <h3 class="text-sm font-bold text-brand-dark mb-1">Atendimento Local</h3>
+          <p class="text-xs text-brand-gray">BH e Região Metropolitana</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="py-16 sm:py-20 bg-white text-center">
+    <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 space-y-6">
+      <h2 class="text-3xl sm:text-4xl font-extrabold tracking-tight text-brand-dark">Pronto para proteger seu reservatório?</h2>
+      <p class="text-lg text-brand-gray">Entre em contato agora mesmo e garanta água limpa e segura para sua família ou condomínio.</p>
+      <a href={companyInfo.whatsappUrl} target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center gap-2 px-8 h-14 text-sm font-bold text-white bg-whatsapp hover:bg-whatsapp-hover rounded-xl shadow-xl transition-all">
+        Solicitar Orçamento Sem Compromisso
+      </a>
+    </div>
+  </section>
+</BaseLayout>

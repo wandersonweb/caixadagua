@@ -1,0 +1,62 @@
+---
+interface Props {
+  title: string;
+  description: string;
+  slug: string;
+  category?: string;
+  pubDate?: string;
+  image?: string;
+}
+
+const {
+  title,
+  description,
+  slug,
+  category = "Manutenção",
+  pubDate = "21 de Agosto de 2024",
+  image = "https://caixadaagua.com.br/wp-content/uploads/2024/06/Reforma-de-caixa-da-agua.jpg"
+} = Astro.props;
+---
+
+<div class="group bg-white border border-brand-border/60 rounded-3xl overflow-hidden shadow-sm hover:shadow-lg hover:border-brand-border transition-all duration-300 flex flex-col justify-between h-full">
+  <div>
+    <!-- Cover Image -->
+    <div class="relative h-48 overflow-hidden bg-brand-bg-light">
+      <img
+        src={image}
+        alt={title}
+        class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-500"
+        loading="lazy"
+      />
+      <div class="absolute top-4 left-4">
+        <span class="inline-flex items-center px-3 py-1 rounded-full text-[10px] font-bold bg-white/95 text-primary shadow-sm uppercase tracking-wide">
+          {category}
+        </span>
+      </div>
+    </div>
+
+    <!-- Details -->
+    <div class="p-6 space-y-3">
+      <span class="text-[10px] text-brand-gray font-bold uppercase tracking-wider">{pubDate}</span>
+      <h3 class="text-lg font-bold text-brand-dark group-hover:text-primary transition-colors duration-300 leading-tight">
+        <a href={`/${slug}/`}>{title}</a>
+      </h3>
+      <p class="text-sm text-brand-gray leading-relaxed line-clamp-3">
+        {description}
+      </p>
+    </div>
+  </div>
+
+  <!-- Footer Link -->
+  <div class="px-6 pb-6 pt-4 border-t border-brand-border/40">
+    <a
+      href={`/${slug}/`}
+      class="text-xs font-bold text-brand-dark group-hover:text-primary transition-colors duration-300 inline-flex items-center gap-1 cursor-pointer"
+    >
+      Continuar Lendo
+      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor" class="w-3.5 h-3.5 transform group-hover:translate-x-0.5 transition-transform">
+        <path stroke-linecap="round" stroke-linejoin="round" d="m8.25 4.5 7.5 7.5-7.5 7.5" />
+      </svg>
+    </a>
+  </div>
+</div>
