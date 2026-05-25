@@ -18,18 +18,18 @@ const currentYear = new Date().getFullYear();
           </div>
           <div class="flex flex-col">
             <span class="text-lg font-extrabold tracking-tight text-white leading-none">CAIXAS SÃO BENTO</span>
-            <span class="text-[10px] text-brand-gray tracking-widest font-semibold uppercase">Reforma & Manutenção</span>
+            <span class="text-[10px] text-slate-300 tracking-widest font-semibold uppercase">Reforma & Manutenção</span>
           </div>
         </a>
-        <p class="text-sm text-brand-gray leading-relaxed max-w-sm">
+        <p class="text-sm text-slate-300 leading-relaxed max-w-sm">
           {companyInfo.description} Referência em atendimento de qualidade, segurança e conformidade técnica na Grande BH.
         </p>
         <div class="flex items-center gap-3 pt-2">
-          <span class="text-xs font-semibold text-brand-gray uppercase tracking-wider">Siga-nos:</span>
-          <a href={companyInfo.facebook} target="_blank" rel="noopener noreferrer" class="text-brand-gray hover:text-white transition-colors" aria-label="Facebook">
+          <span class="text-xs font-semibold text-slate-300 uppercase tracking-wider">Siga-nos:</span>
+          <a href={companyInfo.facebook} target="_blank" rel="noopener noreferrer" class="text-slate-300 hover:text-white transition-colors" aria-label="Facebook">
             <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M22 12c0-5.52-4.48-10-10-10S2 6.48 2 12c0 4.84 3.44 8.87 8 9.8V15H8v-3h2V9.5C10 7.57 11.57 6 13.5 6H16v3h-2c-.55 0-1 .45-1 1v2h3v3h-3v6.95c4.56-.93 8-4.96 8-9.75z"/></svg>
           </a>
-          <a href={companyInfo.instagram} target="_blank" rel="noopener noreferrer" class="text-brand-gray hover:text-white transition-colors" aria-label="Instagram">
+          <a href={companyInfo.instagram} target="_blank" rel="noopener noreferrer" class="text-slate-300 hover:text-white transition-colors" aria-label="Instagram">
             <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.051.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 1 0 0 12.324 6.162 6.162 0 0 0 0-12.324zM12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm6.406-11.845a1.44 1.44 0 1 0 0 2.881 1.44 1.44 0 0 0 0-2.881z"/></svg>
           </a>
         </div>
@@ -41,7 +41,7 @@ const currentYear = new Date().getFullYear();
         <ul class="space-y-2.5">
           {footerNav.map((item) => (
             <li>
-              <a href={item.href} class="text-sm text-brand-gray hover:text-white transition-colors flex items-center gap-1.5 group">
+              <a href={item.href} class="text-sm text-slate-300 hover:text-white transition-colors flex items-center gap-1.5 group">
                 <span class="w-1.5 h-1.5 rounded-full bg-primary/40 group-hover:bg-primary transition-colors"></span>
                 {item.label}
               </a>
@@ -53,7 +53,7 @@ const currentYear = new Date().getFullYear();
       <!-- Column 3: Contact & Areas Served -->
       <div class="space-y-4">
         <h3 class="text-sm font-bold tracking-wider text-white uppercase">Contato & Atendimento</h3>
-        <ul class="space-y-3 text-sm text-brand-gray">
+        <ul class="space-y-3 text-sm text-slate-300">
           <li class="flex items-start gap-2.5">
             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-5 h-5 text-primary shrink-0 mt-0.5">
               <path stroke-linecap="round" stroke-linejoin="round" d="M15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z" />
@@ -87,7 +87,7 @@ const currentYear = new Date().getFullYear();
     </div>
 
     <!-- Divider -->
-    <div class="border-t border-brand-border/10 pt-8 flex flex-col md:flex-row items-center justify-between gap-4 text-xs text-brand-gray">
+    <div class="border-t border-brand-border/10 pt-8 flex flex-col md:flex-row items-center justify-between gap-4 text-xs text-slate-300">
       <p>
         &copy; {currentYear} {companyInfo.name}. Todos os direitos reservados.
       </p>

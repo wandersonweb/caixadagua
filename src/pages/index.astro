@@ -66,9 +66,14 @@ const localBusinessSchema = getLocalBusinessSchema();
               <div class="relative h-64 sm:h-80 lg:h-[28rem] bg-brand-bg-light overflow-hidden">
                 <img
                   src="/images/blog/1200x675/Consertar-Caixa-Fibra.webp"
+                  srcset="/images/blog/768x432/Consertar-Caixa-Fibra-M.webp 768w, /images/blog/1200x675/Consertar-Caixa-Fibra.webp 1200w"
+                  sizes="(min-width: 1024px) 50vw, 100vw"
                   alt="Equipe realizando reforma e manutenção de caixa d'água"
                   class="w-full h-full object-cover"
                   loading="eager"
+                  fetchpriority="high"
+                  width="1200"
+                  height="675"
                 />
                 <div class="absolute inset-0 bg-gradient-to-t from-brand-dark/80 via-brand-dark/15 to-transparent"></div>
                 <div class="absolute left-5 right-5 bottom-5">
@@ -295,7 +300,7 @@ const localBusinessSchema = getLocalBusinessSchema();
                 CS
               </div>
               <div>
-                <h4 class="text-sm font-bold text-brand-dark">Caixas São Bento</h4>
+                <p class="text-sm font-bold text-brand-dark">Caixas São Bento</p>
                 <p class="text-xs text-brand-gray">Especialistas em Reservatórios</p>
               </div>
             </div>
@@ -334,7 +339,7 @@ const localBusinessSchema = getLocalBusinessSchema();
                 {t.name.split(" ").map(n => n[0]).join("")}
               </div>
               <div>
-                <h4 class="text-sm font-bold text-brand-dark leading-none">{t.name}</h4>
+                <p class="text-sm font-bold text-brand-dark leading-none">{t.name}</p>
                 <span class="text-xs text-brand-gray font-medium mt-1 inline-block">{t.role} - {t.location}</span>
               </div>
             </div>

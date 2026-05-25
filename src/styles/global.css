@@ -1,19 +1,18 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700;800&display=swap');
 @import "tailwindcss";
 
 @theme {
   --color-primary: #0b63ce;
   --color-primary-hover: #074fa5;
   --color-accent: #f4b63f;
-  --color-whatsapp: #25d366;
-  --color-whatsapp-hover: #05a131;
+  --color-whatsapp: #128c4a;
+  --color-whatsapp-hover: #075e35;
   --color-brand-dark: #101827;
   --color-brand-gray: #647184;
   --color-brand-bg-light: #f4f7fb;
   --color-brand-border: #dbe3ef;
   
-  --font-sans: "Inter", sans-serif;
-  --font-heading: "Outfit", sans-serif;
+  --font-sans: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  --font-heading: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
 }
 
 @layer base {

@@ -20,14 +20,35 @@ const { title, description, canonical, ogImage, isHome = false, schema } = Astro
 <!doctype html>
 <html lang="pt-BR">
   <head>
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-QKZ4JE8305"></script>
     <script is:inline>
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
+      window.gtag = gtag;
 
-      gtag('config', 'G-QKZ4JE8305');
+      const loadAnalytics = () => {
+        if (window.__analyticsLoaded) return;
+        window.__analyticsLoaded = true;
+        const script = document.createElement('script');
+        script.src = 'https://www.googletagmanager.com/gtag/js?id=G-QKZ4JE8305';
+        script.async = true;
+        document.head.appendChild(script);
+        gtag('js', new Date());
+        gtag('config', 'G-QKZ4JE8305');
+      };
+
+      const scheduleAnalytics = () => {
+        if ('requestIdleCallback' in window) {
+          window.requestIdleCallback(loadAnalytics, { timeout: 2500 });
+        } else {
+          window.setTimeout(loadAnalytics, 1500);
+        }
+      };
+
+      if (document.readyState === 'complete') {
+        scheduleAnalytics();
+      } else {
+        window.addEventListener('load', scheduleAnalytics, { once: true });
+      }
     </script>
     <meta name="google-site-verification" content="6GYrtU2FSwHyZiO_DnNv2cbvHc_Me4hqEY3eNw-4fJ0" />
 

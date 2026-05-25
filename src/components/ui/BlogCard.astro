@@ -18,6 +18,8 @@ const {
   image = "https://caixadaagua.com.br/wp-content/uploads/2024/06/Reforma-de-caixa-da-agua.jpg",
   mobileImage
 } = Astro.props;
+
+const imageSrcset = mobileImage ? `${mobileImage} 768w, ${image} 1200w` : undefined;
 ---
 
 <div class="group bg-white border border-brand-border/70 rounded-lg overflow-hidden shadow-sm hover:surface-shadow hover:border-primary/20 transition-all duration-300 flex flex-col justify-between h-full">
@@ -25,12 +27,15 @@ const {
     <!-- Cover Image -->
     <div class="relative h-48 overflow-hidden bg-brand-bg-light">
       <picture class="block h-full">
-        {mobileImage && <source media="(max-width: 640px)" srcset={mobileImage} />}
         <img
           src={image}
+          srcset={imageSrcset}
+          sizes="(min-width: 1024px) 31vw, (min-width: 768px) 46vw, 100vw"
           alt={title}
           class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-500"
           loading="lazy"
+          width="768"
+          height="432"
         />
       </picture>
       <div class="absolute top-4 left-4">
