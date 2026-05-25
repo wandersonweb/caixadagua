@@ -19,7 +19,10 @@ const {
   mobileImage
 } = Astro.props;
 
-const imageSrcset = mobileImage ? `${mobileImage} 768w, ${image} 1200w` : undefined;
+const smallImage = mobileImage?.replace("/768x432/", "/384x216/");
+const imageSrcset = mobileImage && smallImage
+  ? `${smallImage} 384w, ${mobileImage} 768w, ${image} 1200w`
+  : undefined;
 ---
 
 <div class="group bg-white border border-brand-border/70 rounded-lg overflow-hidden shadow-sm hover:surface-shadow hover:border-primary/20 transition-all duration-300 flex flex-col justify-between h-full">
@@ -30,7 +33,7 @@ const imageSrcset = mobileImage ? `${mobileImage} 768w, ${image} 1200w` : undefi
         <img
           src={image}
           srcset={imageSrcset}
-          sizes="(min-width: 1024px) 31vw, (min-width: 768px) 46vw, 100vw"
+          sizes="(min-width: 1024px) 190px, (min-width: 768px) 46vw, 100vw"
           alt={title}
           class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-500"
           loading="lazy"

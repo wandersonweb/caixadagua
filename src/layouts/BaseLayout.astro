@@ -20,6 +20,8 @@ const { title, description, canonical, ogImage, isHome = false, schema } = Astro
 <!doctype html>
 <html lang="pt-BR">
   <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <script is:inline>
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
@@ -36,25 +38,13 @@ const { title, description, canonical, ogImage, isHome = false, schema } = Astro
         gtag('config', 'G-QKZ4JE8305');
       };
 
-      const scheduleAnalytics = () => {
-        if ('requestIdleCallback' in window) {
-          window.requestIdleCallback(loadAnalytics, { timeout: 2500 });
-        } else {
-          window.setTimeout(loadAnalytics, 1500);
-        }
-      };
-
-      if (document.readyState === 'complete') {
-        scheduleAnalytics();
-      } else {
-        window.addEventListener('load', scheduleAnalytics, { once: true });
-      }
+      ['pointerdown', 'keydown', 'touchstart', 'scroll'].forEach((eventName) => {
+        window.addEventListener(eventName, loadAnalytics, { once: true, passive: true });
+      });
     </script>
     <meta name="google-site-verification" content="6GYrtU2FSwHyZiO_DnNv2cbvHc_Me4hqEY3eNw-4fJ0" />
 
     <!-- Meta Pixel Code: cole aqui o pixel do Facebook/Meta quando precisar. -->
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <SEOHead
       title={title}

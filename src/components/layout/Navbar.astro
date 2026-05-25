@@ -166,10 +166,8 @@ const currentPath = Astro.url.pathname;
   window.addEventListener('scroll', () => {
     if (header) {
       if (window.scrollY > 20) {
-        header.classList.remove('py-2');
         header.classList.add('shadow-md');
       } else {
-        header.classList.add('py-2');
         header.classList.remove('shadow-md');
       }
     }
